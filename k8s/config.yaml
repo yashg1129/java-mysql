@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: mysql-config
 data:
-  DB_HOST: "3.90.16.209"
+  DB_HOST: "100.31.91.252"
   DB_PORT: "3306"
   DB_NAME: "appdb"
   DDL_AUTO: "update"

@@ -30,7 +30,7 @@ pipeline {
         stage('Login to Docker Hub') {
             steps {
                 withCredentials([usernamePassword(
-                    credentialsId: 'DockerCreds',
+                    credentialsId: 'Docker_Skills_Creds',
                     usernameVariable: 'DOCKER_USER',
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
@@ -40,7 +40,7 @@ pipeline {
         }
         stage('Push Image') {
             steps {
-                echo 'Docker image pushing...${IMAGE_NAME}:${IMAGE_TAG}'
+                echo "Docker image pushing...${IMAGE_NAME}:${IMAGE_TAG}"
                 sh "docker push ${IMAGE_NAME}:${IMAGE_TAG}"
                 sh "docker push ${IMAGE_NAME}:latest"
                 echo 'Docker image pushed'
