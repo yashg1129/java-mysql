@@ -1,6 +1,6 @@
 pipeline {
     environment {
-		IMAGE_NAME = "ravindra84410/java-mysql"
+		IMAGE_NAME = "skillstute/java-mysql"
 		IMAGE_TAG = "${env.BUILD_NUMBER}"
 	}
     agent any

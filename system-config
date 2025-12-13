@@ -1,0 +1,22 @@
+jenkins-pipeline: t3 large, volume 20 GB
+Master-node: t3.medium
+Worker-node: t3.small
+database: t3.nano
+
+configure CI/CD with the help of chatgpt and solve some problems, again with sub tab of chatgpt
+Jenkins install from aws-setup(notepad++)
+
+Jenkins-setup
+-------------
+No docker and k8s plugin with jenkins
+Add users,
+1. GIT (secret key)
+2. Docker (user and password)
+3. K8s (secret then config file)
+
+Tools:
+1. get git whole path from linux (which git)
+2. Put maven name ex: maven_3_9_11
+
+Plugin:
+  StageView

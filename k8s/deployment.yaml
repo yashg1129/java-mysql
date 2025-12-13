@@ -12,6 +12,8 @@ spec:
       labels:
         app: java-mysql
     spec:
+      imagePullSecrets:
+        - name: dockerhub-secret  # <--- ADD THIS for private
       containers:
         - name: java-container
           image: ravindra84410/java-mysql:latest
