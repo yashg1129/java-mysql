@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: java-mysql
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: java-mysql
@@ -16,7 +16,7 @@ spec:
         - name: dockerhub-secret  # <--- ADD THIS for private
       containers:
         - name: java-container
-          image: ravindra84410/java-mysql:latest
+          image: skillstute/java-mysql:latest
           ports:
             - containerPort: 8080
           env:
