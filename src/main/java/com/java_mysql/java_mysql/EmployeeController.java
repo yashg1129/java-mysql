@@ -31,6 +31,7 @@ public class EmployeeController {
         System.out.println("before locale: "+locale);
         List<Employee> list = service.getAll();
         System.out.println("after: "+list);
+        System.out.println("testing");
         return list;
     }
 
