@@ -7,6 +7,6 @@ spec:
   selector:
     app.kubernetes.io/name: java-mysql
   ports:
-    - port: 8080
+    - protocol: TCP
+      port: 8080
       targetPort: 30200
-      nodePort: 31154
