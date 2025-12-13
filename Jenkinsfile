@@ -51,6 +51,8 @@ pipeline {
                 // EC2-1 (Jenkins)
                 echo 'Kubernetes image deploying...'
                withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
+                    sh 'kubectl apply -f k8s/config.yaml'
+                    sh 'kubectl apply -f k8s/secret.yaml'
                     sh 'kubectl apply -f k8s/deployment.yaml'
                     sh 'kubectl apply -f k8s/service.yaml'
                 }
