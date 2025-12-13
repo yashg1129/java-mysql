@@ -12,7 +12,7 @@ pipeline {
             steps {
                 git branch: 'master',
                     url: 'https://github.com/yashg1129/java-mysql.git',
-                    credentialsId: 'gitcreds'
+                    credentialsId: 'git-creds'
             }
         }
         stage('Build') {
@@ -24,13 +24,13 @@ pipeline {
         stage('Docker build') {
             steps {
                 echo 'Docker build...'
-                sh 'docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .'
+                sh 'docker build -t ${IMAGE_NAME}:${IMAGE_TAG} -t ${IMAGE_NAME}:latest .'
             }
         }
         stage('Login to Docker Hub') {
             steps {
                 withCredentials([usernamePassword(
-                    credentialsId: 'Docker',
+                    credentialsId: 'DockerCreds',
                     usernameVariable: 'DOCKER_USER',
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
@@ -42,6 +42,7 @@ pipeline {
             steps {
                 echo 'Docker image pushing...${IMAGE_NAME}:${IMAGE_TAG}'
                 sh "docker push ${IMAGE_NAME}:${IMAGE_TAG}"
+                sh "docker push ${IMAGE_NAME}:latest"
                 echo 'Docker image pushed'
             }
         }

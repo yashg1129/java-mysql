@@ -12,7 +12,7 @@ spring:
         format_sql: true
 
   datasource:
-    url: jdbc:mysql://52.207.196.143:3306/appdb?useSSL=false&serverTimezone=UTC
-    username: appuser
-    password: Ravindra@712
+    url: jdbc:mysql://3.90.16.209:3306/appdb?useSSL=false&serverTimezone=UTC
+    username: ravindra
+    password: Yashvi@712
     driver-class-name: com.mysql.cj.jdbc.Driver
