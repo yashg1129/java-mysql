@@ -25,31 +25,31 @@ spec:
             - name: SPRING_PROFILES_ACTIVE
               value: "prod"
 
-            - name: DB_HOST
+            - name: DB_HOST_1
               valueFrom:
                 configMapKeyRef:
                   name: mysql-config
                   key: DB_HOST
 
-            - name: DB_PORT
+            - name: DB_PORT_1
               valueFrom:
                 configMapKeyRef:
                   name: mysql-config
                   key: DB_PORT
 
-            - name: DB_NAME
+            - name: DB_NAME_1
               valueFrom:
                 configMapKeyRef:
                   name: mysql-config
                   key: DB_NAME
 
-            - name: DB_USER
+            - name: DB_USER_1
               valueFrom:
                 secretKeyRef:
                   name: mysql-secret
                   key: DB_USER
 
-            - name: DB_PASSWORD
+            - name: DB_PASSWORD_1
               valueFrom:
                 secretKeyRef:
                   name: mysql-secret
