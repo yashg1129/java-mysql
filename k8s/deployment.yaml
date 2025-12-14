@@ -20,6 +20,11 @@ spec:
           ports:
             - containerPort: 8080
           env:
+            - name: JAVA_OPTS
+              value: "-Xms256m -Xmx512m"
+            - name: SPRING_PROFILES_ACTIVE
+              value: "prod"
+
             - name: DB_HOST
               valueFrom:
                 configMapKeyRef:
